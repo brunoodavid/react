@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+.containerHeader{
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nome{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.container{
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#tituloPerfil{
+    margin-bottom: 10px;
+}
+
+#containerInfo{
+    margin-top: 10px;
+    flex:1;
+}
+
+#containerHabilidades{
+    margin-top: 10px;
+   justify-content: space-around;
+}
+
+#experiencia{
+    margin-top: 10px;
+}
+
+#formacao{
+    margin-top: 10px;
+}

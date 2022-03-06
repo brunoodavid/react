@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!--permite edição de elementos HTML dentro do js -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel" >
+        
+        function Header(props){
+            return(
+                <div id="header">
+                <div className="nome"><h1>{props.nome}</h1></div> 
+                <h2>{props.tituloHeader}</h2>  
+            </div>
+            );
+        }
+
+        function Perfil(props){
+            return(
+                <div id="perfil">
+                    <h2 id="tituloPerfil">Perfil</h2>
+                    <p>{props.conteudo}</p>   
+                </div>
+            );
+        }
+
+        function Informacoes(props){
+            return(
+                <div id="informacoes">
+                    <h2>Informações Pessoais</h2>
+                    <p>Nome: {props.nomeInfo}</p>
+                    <p>Data de Nascimento: {props.dataInfo}</p>
+                    <p>Naturalidade: {props.naturalidadeInfo}</p>
+                    <p>Disponibilidade: {props.disponibilidadeInfo}</p>
+                    <p>Contato: {props.contatoInfo}</p>
+                    <p>Email: {props.emailInfo}</p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/brunoodavid/">{props.linkedinInfo} </a></p>    
+                </div>
+            );
+        }  
+        
+        function Habilidades(props){
+            return (
+                <div>
+                    <h2>Habilidades</h2>
+                    <ul>
+                        <li>{props.habilidade}</li>
+                    </ul>
+                </div>
+            );
+        }
+
+        function Experiencia(props){
+            return(
+                <div id="experiencia">
+                    <h2>Experiência</h2>
+                    <h3>{props.tituloExperiencia}</h3>
+                    <h4>{props.anoExperiencia}</h4>
+                    <p>{props.infoExperiencia}</p>
+                </div>
+            );
+        }
+
+        function Formacao(props){
+            return (
+                <div id="formacao">
+                    <h2>Formação</h2>
+                    <h3>{props.tituloFormacao}</h3>
+                    <h4>{props.anoFormacao}</h4>
+                    <p>{props.infoFormacao}</p>    
+                </div>
+            );
+        }
+
+        function App(){
+            return(
+                <div>
+                    <div className="containerHeader">
+                        <Header nome="Bruno Hoffmann" tituloHeader="Estágio em Análise e Desenvolvimento de Sistemas" />
+                    </div>
+                    <div className="container">
+                        <Perfil conteudo="Sempre gostei muito de tecnologia" />
+                    </div>
+                    <div className="container">
+                        <div id="containerInfo">
+                            <Informacoes nomeInfo="Bruno David Thome Hoffmann" 
+                                         dataInfo="28/07/1996"
+                                         naturalidadeInfo="Porto Alegre, POA - Brasil"
+                                         disponibilidadeInfo="Período Integral"
+                                         contatoInfo="(51) 99151-5802" 
+                                         emailInfo= "bruno_davidthome@hotmail.com"
+                                         linkedinInfo = "LinkedIn"/>
+                        </div>
+                        <div id="containerHabilidades">
+                            <Habilidades habilidade="Trabalho em equipe" />
+                        </div>
+                    </div>
+                    <div className="container">
+                        <Experiencia tituloExperiencia="Salgadaria e Confeitaria Thome"
+                                     anoExperiencia="2010 - Atual"
+                                     infoExperiencia="Trabalho na produção de salgados" />
+                    </div>
+                    <div className="container">
+                        <Formacao tituloFormacao="Universidade do Vale do Rio dos Sinos"
+                                  anoFormacao="2022 - 2025"
+                                  infoFormacao="Ensino Superior" />
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
